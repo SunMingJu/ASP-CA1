@@ -23,6 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
 Cypress.Commands.add('onSubmit', (review) => {
     cy.get("#author").type(review.author, {force:true});
     cy.get("#review").type(review.review, {force:true});
