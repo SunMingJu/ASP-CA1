@@ -1,4 +1,4 @@
-import { filterByGenre, filterByTitle } from "../support/e2e";
+import { filterByGenre, filterByTitle, filterByLanguage } from "../support/e2e";
 
 let movies; // List of Discover movies from TMDB
 
@@ -54,6 +54,21 @@ describe("Filtering", () => {
       });
     });
   });
+  describe("By movie language", () => {
+    it("show movies with the selected language", () => {
+        const selectedLanguage = "en";
+        const matchingMovies = filterByLanguage(movies, selectedLanguage);
+        cy.get("#language-select").click();
+        cy.get("li").contains(selectedLanguage).click();
+        cy.get(".MuiCardHeader-content").should(
+            "have.length",
+            matchingMovies.length
+        );
+        cy.get(".MuiCardHeader-content").each(($card, index) => {
+            cy.wrap($card).find("p").contains(matchingMovies[index].title);
+        });
+    })
+})
   describe("Combined genre and title", () => {
   it("displays movies that match both genre and title filters", () => {
     const selectedGenreId = 18;
