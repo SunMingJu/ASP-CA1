@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState, lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 // eslint-disable-next-line no-unused-vars
 import { BrowserRouter, Route, Navigate, Routes, Link } from "react-router-dom";
-import HomePage from "./pages/homePage";
+// import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
@@ -21,6 +21,8 @@ import PersonDetailsPage from './pages/personDetailsPage';
 import LoginPage from "./pages/loginPage";
 import RegisterPage from "./pages/registerPage";
 import ResetPage from "./pages/resetPage";
+
+const HomePage = lazy(() => import("./pages/homePage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
