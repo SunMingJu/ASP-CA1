@@ -7,7 +7,7 @@ import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
 // import SiteHeader from './components/siteHeader';
-import UpcomingMoviesPage from './pages/upcomingMoviesPage';
+// import UpcomingMoviesPage from './pages/upcomingMoviesPage';
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools';
 import MoviesContextProvider from "./contexts/moviesContext";
@@ -25,6 +25,8 @@ import ResetPage from "./pages/resetPage";
 const HomePage = lazy(() => import("./pages/homePage"));
 
 const SiteHeader = lazy(() => import("./components/siteHeader"));
+
+const UpcomingMoviesPage = lazy(() => import("./pages/upComingMoviesPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
