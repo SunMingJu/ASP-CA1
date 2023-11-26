@@ -39,6 +39,8 @@ Firebase Authentication
 
 ## Automated Tests.
 
+### Best test case
++ [cypress/e2e/personDetail.cy.js](cypress/e2e/personDetail.cy.js)
 
 ### Cypress Custom commands (if relevant).
 
