@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/static/js/main.e52076b0.js",
+    "static/js/812.b6a00be0.chunk.js": "/static/js/812.b6a00be0.chunk.js",
+    "static/js/379.0528b6de.chunk.js": "/static/js/379.0528b6de.chunk.js",
+    "static/js/227.3ab6722c.chunk.js": "/static/js/227.3ab6722c.chunk.js",
+    "static/js/533.aec28ceb.chunk.js": "/static/js/533.aec28ceb.chunk.js",
+    "static/media/pexels-dziana-hasanbekava-5480827.jpg": "/static/media/pexels-dziana-hasanbekava-5480827.6123c500508cea5447e7.jpg",
+    "static/media/film-poster-placeholder.png": "/static/media/film-poster-placeholder.9a8182eb4c8ae70fe602.png",
+    "index.html": "/index.html",
+    "main.e52076b0.js.map": "/static/js/main.e52076b0.js.map",
+    "812.b6a00be0.chunk.js.map": "/static/js/812.b6a00be0.chunk.js.map",
+    "379.0528b6de.chunk.js.map": "/static/js/379.0528b6de.chunk.js.map",
+    "227.3ab6722c.chunk.js.map": "/static/js/227.3ab6722c.chunk.js.map",
+    "533.aec28ceb.chunk.js.map": "/static/js/533.aec28ceb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.e52076b0.js"
+  ]
+}
