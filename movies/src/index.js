@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState, lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 // eslint-disable-next-line no-unused-vars
 import { BrowserRouter, Route, Navigate, Routes, Link } from "react-router-dom";
-import HomePage from "./pages/homePage";
+// import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
-import SiteHeader from './components/siteHeader';
-import UpcomingMoviesPage from './pages/upcomingMoviesPage';
+// import SiteHeader from './components/siteHeader';
+// import UpcomingMoviesPage from './pages/upcomingMoviesPage';
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools';
 import MoviesContextProvider from "./contexts/moviesContext";
@@ -21,6 +21,12 @@ import PersonDetailsPage from './pages/personDetailsPage';
 import LoginPage from "./pages/loginPage";
 import RegisterPage from "./pages/registerPage";
 import ResetPage from "./pages/resetPage";
+
+const HomePage = lazy(() => import("./pages/homePage"));
+
+const SiteHeader = lazy(() => import("./components/siteHeader"));
+
+const UpcomingMoviesPage = lazy(() => import("./pages/upComingMoviesPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
