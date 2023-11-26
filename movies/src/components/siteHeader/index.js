@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -13,7 +13,7 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { logout, auth } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import Spinner from "../spinner";
+const Spinner = lazy(() => import("../spinner"));
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
@@ -59,7 +59,7 @@ const SiteHeader = ({ history }) => {
     setAnchorEl(event.currentTarget);
   };
   if (isLoading) {
-    return <Spinner />;
+    return <Suspense fallback={<h1>Loading Componment</h1>}>{<Spinner />}</Suspense>;
   }
 
   if (isError) {

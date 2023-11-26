@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Navigate, Routes, Link } from "react-router-dom";
 import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
-import SiteHeader from './components/siteHeader';
+// import SiteHeader from './components/siteHeader';
 import UpcomingMoviesPage from './pages/upcomingMoviesPage';
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -23,6 +23,8 @@ import RegisterPage from "./pages/registerPage";
 import ResetPage from "./pages/resetPage";
 
 const HomePage = lazy(() => import("./pages/homePage"));
+
+const SiteHeader = lazy(() => import("./components/siteHeader"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
