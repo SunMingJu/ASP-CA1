@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import Spinner from '../components/spinner';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -16,6 +15,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import GoogleIcon from '@mui/icons-material/Google';
+const Spinner = lazy(() => import("../components/spinner"));
 
 function LoginPage() {
 
@@ -27,14 +27,16 @@ function LoginPage() {
 
   useEffect(() => {
     if (isLoading) {
-      <Spinner />
+      <Suspense fallback={<h1>Loading Componment</h1>}>
+      {<Spinner />}
+      </Suspense>
       return;
     }
     if (user) navigate("/page1");
   }, [user, isLoading, navigate]);
 
   if (isLoading) {
-    return <Spinner />;
+    return    <Suspense fallback={<h1>Loading Componment</h1>}>{<Spinner />}</Suspense>;
   }
 
   if (isError) {
