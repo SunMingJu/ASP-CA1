@@ -30,8 +30,10 @@ describe("The favourites feature", () => {
       // Select two favourites and navigate to Favourites page
       cy.get("button[aria-label='add to favorites']").eq(1).click();
       cy.get("button[aria-label='add to favorites']").eq(3).click();
-      cy.get("button").contains("Favorites").click();
+      cy.get("button").contains("Movies").click();
+      cy.get("li").contains("Favorites").click();
     });
+    
     it("only the tagged movies are listed", () => {
       cy.get(".MuiCardHeader-content").should("have.length", 2);
       cy.get(".MuiCardHeader-content")
@@ -43,6 +45,17 @@ describe("The favourites feature", () => {
         .find("p")
         .contains(movies[3].title);
     });
-    it("removes deleted movies", () => {});
+
+    it(" only the not deleted movies are listed", () => {
+      cy.get("button[aria-label='remove from favorites']").eq(0).click({ force: true });
+      cy.get(".MuiCardHeader-content").eq(0).find("p").contains(movies[3].title);
+    });
+
+    it(" not selected movie card not show the red heart", () => {
+      cy.get("button[aria-label='remove from favorites']").eq(0).click({ force: true });
+      cy.get(".MuiButtonBase-root").eq(0).click({ force: true });
+      cy.get(".MuiCardHeader-root").eq(1).find("svg").should("not.exist");
+    });
   });
-});
+})
+
