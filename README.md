@@ -55,12 +55,12 @@ Firebase Authentication
 + [src/pages/registerPage.js](src/pages/registerPage.js)
 + [src/pages/resetPage.js](src/pages/resetPage.js)
 + [src/pages/upComingMoviesPage.js](src/pages/upComingMoviesPage.js)
-+ [src/components/siteHeader/index.js](src/components/siteHeader/index.js
++ [src/components/siteHeader/index.js](src/components/siteHeader/index.js)
   
 
 ## Pull Requests.
 
-[https://github.com/cky008/agile-movie-assignment-one](https://github.com/cky008/agile-movie-assignment-one)  
+(https://github.com/SunMingJu/ASP-CA1)
 
 ## Independent learning (If relevant).
 
